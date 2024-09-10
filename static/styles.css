@@ -1,23 +1,31 @@
+/* General Styles */
 body {
     font-family: 'Helvetica Neue', Arial, sans-serif;
     background-image: url('img1.jpg');
-    background-size: cover; /* Ensures the image covers the entire background */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    background-position: center; /* Centers the image */
-    color: #e0e0e0; /* Light text color for contrast */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #e0e0e0;
     margin: 0;
     height: 100vh;
     padding: 0;
+    justify-content: center;
+
 }
 
 .container {
     width: 60%;
-    margin: 40px auto;
+    margin: 20px auto;
     padding: 30px;
-    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%); /* Dark container background */
-    border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.2s, box-shadow 0.2s;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-radius: 20px;
+    background: linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%);
+    border-image-source: linear-gradient(270deg, red, yellow, green, blue);
+    animation: borderAnimation 4s linear infinite;
+    background-color: white;
 }
 
 .container:hover {
@@ -27,9 +35,9 @@ body {
 
 h1 {
     text-align: center;
-    color: #ffffff; /* White text for headings */
-    font-size: 40px; /* Increased font size */
-    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 2.4vw;
+    margin-bottom: 28px;
 }
 
 form {
@@ -37,22 +45,21 @@ form {
 }
 
 textarea {
-    width: 100%;
+    width: 96.9%;
     padding: 15px;
-    border: 1px solid #444;
-    border-radius: 6px;
+    border: 2px;
+    border-radius: 15px;
     background: #333;
     color: #e0e0e0;
-    font-size: 16px; /* Increased font size */
+    font-size: 1.2vw;
     margin-bottom: 20px;
     resize: vertical;
 }
 
-/* Updated Button Styles */
-.button-29 {
+/* Button Styles */
+.button-29, .button-clear {
     align-items: center;
     appearance: none;
-    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
     border: 0;
     border-radius: 6px;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
@@ -61,23 +68,21 @@ textarea {
     cursor: pointer;
     display: inline-flex;
     font-family: "JetBrains Mono", monospace;
-    height: 48px;
+    height: 3.65vw;
     justify-content: center;
     line-height: 1;
     list-style: none;
     overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 0 16px;
     position: relative;
     text-align: left;
     text-decoration: none;
     transition: box-shadow .15s, transform .15s;
     user-select: none;
-    -webkit-user-select: none;
     touch-action: manipulation;
     white-space: nowrap;
     will-change: box-shadow, transform;
-    font-size: 20px; /* Increased font size */
+    font-size: 1.4vw;
 }
 
 .button-29:focus {
@@ -94,38 +99,20 @@ textarea {
     transform: translateY(2px);
 }
 
-.button-clear {
-    align-items: center;
-    appearance: none;
-    background: #ff4d4d; /* Red background for the clear button */
-    border: 0;
-    border-radius: 6px;
-    box-shadow: rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, rgba(58, 65, 111, .5) 0 -3px 0 inset;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-flex;
-    font-family: "JetBrains Mono", monospace;
-    height: 48px;
-    justify-content: center;
-    line-height: 1;
-    list-style: none;
-    overflow: hidden;
-    padding-left: 16px;
-    padding-right: 16px;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
-    transition: box-shadow .15s, transform .15s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    white-space: nowrap;
-    will-change: box-shadow, transform;
-    font-size: 18px;
-    margin-left: 10px; /* Space between the buttons */
+.button-29 {
+    background-image: radial-gradient(100% 100% at 100% 0, #5adaff 0, #5468ff 100%);
 }
 
+.button-clear {
+    background: #ff4d4d;
+    margin-left: 10px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 .button-clear:focus {
     box-shadow: #e02c2c 0 0 0 1.5px inset, rgba(45, 35, 66, .4) 0 2px 4px, rgba(45, 35, 66, .3) 0 7px 13px -3px, #e02c2c 0 -3px 0 inset;
 }
@@ -139,46 +126,117 @@ textarea {
     box-shadow: #e02c2c 0 3px 7px inset;
     transform: translateY(2px);
 }
-
-/* Button Container Styles */
-.button-container {
-    display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    gap: 10px; /* Space between the buttons */
-}
-
 #result {
     text-align: center;
-    margin-top: 20px;
-    font-size: 22px;
+    margin-top: 2.9%;
+    font-size: 1.5vw;
 }
 
 #algorithm {
-    font-size: 28px; /* Increased font size */
-    color: #e0e0e0; /* Light text color */
+    font-size: 28px;
+    color: #e0e0e0;
     margin-top: 15px;
 }
 
 .loader {
-    border: 6px solid #444; /* Darker grey for the loader */
-    border-top: 6px solid #007bff; /* Blue */
+    border: 6px solid #444;
+    border-top: 6px solid #007bff;
     border-radius: 50%;
     width: 40px;
     height: 40px;
     animation: spin 1s linear infinite;
     margin: 20px auto;
-    display: none; /* Initially hidden */
+    display: none;
 }
 
+@keyframes borderAnimation {
+    0% {
+        border-image-source: linear-gradient(270deg, #87CEEB, #003153, #4B0082);
+    }
+    33% {
+        border-image-source: linear-gradient(270deg, #003153, #4B0082, #87CEEB);
+    }
+    66% {
+        border-image-source: linear-gradient(270deg, #4B0082, #87CEEB, #003153);
+    }
+    100% {
+        border-image-source: linear-gradient(270deg, #87CEEB, #003153, #4B0082);
+    }
+}
+
+/* Loader Spin Animation */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
 
+/* Loading Text Style */
 .loading-text {
     display: none;
     text-align: center;
-    font-size: 18px; /* Increased font size */
-    color: #aaa; /* Slightly lighter text color for the loading text */
+    font-size: 18px;
+    color: #aaa;
     margin-top: 10px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) { /* Tablet and smaller devices */
+    .container {
+        width: 90%;
+        padding: 20px;
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 4vw;
+    }
+
+    textarea {
+        font-size: 3vw;
+    }
+
+    .button-29, .button-clear {
+        height: 6vw;
+        font-size: 3vw;
+    }
+
+    #result, #algorithm {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile devices */
+    body{
+      height:110vh;
+    }
+    .container {
+        display: block;
+        align-items: center;
+        justify-items:center;
+        margin-top:24vh;
+        width: 85vw;
+        margin-left:2vh;
+        padding: 0px;
+        padding-bottom: 7vh;
+        padding-top:7vh;
+        border-radius: 20px;
+    }
+
+    h1 {
+        font-size: 5vw;
+    }
+
+    textarea {
+        width: 78vw;
+        font-size: 4vw;
+    }
+
+    .button-29, .button-clear {
+        height: 8vw;
+        font-size: 4vw;
+    }
+
+    #result, #algorithm {
+        font-size: 5vw;
+    }
 }
