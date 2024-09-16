@@ -8,8 +8,9 @@
 </head>
 <body>
     <div class="container">
+
         <h1>CRYPTOGRAPHIC ALGORITHM IDENTIFIER</h1>
-        <br>
+
 
         <textarea id="ciphertext" placeholder="Enter ciphertext here..."></textarea>
 
@@ -19,7 +20,7 @@
             <button class="button-clear" role="button" onclick="clearTextarea()">Clear</button>
 
         </div>
-
+        <div id="loader" class="loader"></div>
         <div id="result"></div>
     </div>
     <script src="{{ url_for('static', filename='scripts.js') }}"></script>
