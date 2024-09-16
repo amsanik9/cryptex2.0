@@ -12,6 +12,10 @@ function predictAlgorithm() {
         })
         .then(response => response.json())
         .then(data => {
+            showLoader();
+            setTimeout(() => {
+                hideLoader();
+            }, 2000);
             document.getElementById('result').textContent = `The predicted cryptographic algorithm is: ${data.algorithm}`;
         })
         .catch(error => {
@@ -19,7 +23,19 @@ function predictAlgorithm() {
         });
     }
 }
+
 function clearTextarea() {
     document.getElementById('ciphertext').value = '';
     document.getElementById('result').textContent = '';
+}
+
+function showLoader() {
+    document.getElementById('loader').style.display = 'block';
+    document.getElementById('result').style.display = 'none';
+}
+
+
+function hideLoader() {
+    document.getElementById('loader').style.display = 'none';
+    document.getElementById('result').style.display = 'block';
 }
